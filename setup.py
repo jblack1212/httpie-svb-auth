@@ -3,13 +3,13 @@
 from setuptools import setup
 
 setup(name='httpie-svb-auth',
-      version='1.0.1',
+      version='1.0.2',
       description='SVB API auth plugin for HTTPie.',
       author='Jim Brusstar',
       author_email='jim.brusstar@gmail.com',
       url='https://github.com/svb/httpie-svb-auth',
       download_url='https://github.com/svb/httpie-svb-auth',
-      py_modules=['httpie_hmac_auth'],
+      py_modules=['httpie_svb_auth'],
       classifiers=[
           'Development Status :: 5 - Production/Stable',
           'Environment :: Plugins',
