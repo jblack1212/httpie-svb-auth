@@ -7,6 +7,7 @@ Copyright (c) 2017 Silicon Valley Bank
 import hashlib
 import hmac
 import httpie.plugins
+import requests
 import time
 
 try:
@@ -24,6 +25,9 @@ class SVBAuth:
     def __call__(self, r):
         timestamp = str(int(time.time()))
         url = urlparse(r.url)
+
+        if url.scheme != 'https':
+            raise requests.RequestException('SVB auth requires https!')
 
         if r.headers.get('Content-Type', '').startswith('application/json'):
             body = r.body
