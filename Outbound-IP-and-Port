@@ -1,0 +1,13 @@
+import socket
+
+#Enter IP and port for the host
+host = '204.79.197.213'
+port = 5480
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+try:
+ s.connect((host, port))
+ s.shutdown(2)
+ print ("Socket created successfully:", host + "  port" + str(port))
+except:
+ print ("Socket failed:", host + "  port" + str(port))
